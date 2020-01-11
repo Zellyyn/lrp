@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+body {
+  margin: 0px;
+  padding: 0px;
+  opacity: 0;
+}
+
+.container {
+  position: absolute;
+  right: 40px;
+  top: 200px;
+  height: 500px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: #236;
+  color: white;
+  font-family: 'Roboto Condensed', 'sans serif';
+  padding: 14px;
+  box-shadow: 3px 3px 13px #111;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0.8;
+
+}
+
+.header {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 330px;
+  height: 80px;
+  background: rgb(123,135,207);
+  background: linear-gradient(140deg, rgba(123,135,207,1) 0%, rgba(45,41,119,1) 0%, rgba(3,4,28,1) 100%);
+    padding-top: 20px;
+}
+
+#location {
+  width: 100%;
+  font-family: 'Courgette', 'cursive';
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px #111, 1px -1px #111, -1px 1px #111, -1px -1px #111;
+}
+
+#zone {
+  width: 100%;
+  font-family: 'Courgette', 'sans serif';
+  padding: 10px;
+  text-align: center;
+  margin-top: -10px;
+  margin-left: -10px;
+  text-shadow: 1px 1px #111, 1px -1px #111, -1px 1px #111, -1px -1px #111;
+}
+
+.list-container {
+  position: absolute;
+  top: 110px;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#list {
+  position: absolute;
+  top: 0px;
+  width: 320px;
+  height: 400px;
+  overflow-x: hidden;
+}
+
+table {
+  border-spacing: 0px;
+  width: 100%;
+}
+
+td {
+  font-family: 'Roboto Condensed';
+  font-size: 14px;
+  margin: 0px;
+  padding: 2px;
+  padding-left: 6px;
+}
+
+td.plate {
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+}
+
+tr {
+  height: 34px;
+}
+
+tr:nth-child(odd) {
+  background-color: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #666;
+  color: white;
+}
+
+.find {
+  height: 16px;
+  width: 16px;
+  background-color:white;
+  -webkit-mask-box-image: url('img/find-car.png');
+}
+
+.keys {
+  height: 16px;
+  width: 16px;
+  background-color:white;
+  -webkit-mask-box-image: url('img/manage-keys.png');
+}
+
+.drive {
+  height: 16px;
+  width: 16px;
+  background-color:white;
+  -webkit-mask-box-image: url('img/take-out-car.png');
+}
+

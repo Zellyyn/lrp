@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="garages.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./garages.js" type="text/javascript"></script>
+    <script>
+        function DriveVehicle(data) {
+          $.post('http://lrp_garages/drive', JSON.stringify(data));
+          $("#list").html(""); // Remove list
+          return;
+        }
+
+        function FindVehicle(data) {
+          $.post('http://lrp_garages/find', JSON.stringify(data));
+          $("#list").html(""); // Remove list
+          return;
+        }
+
+    </script>
+	<body>
+		<div class="container">
+      <div class="header">
+        <div id="location"></div>
+        <div id="zone"></div>
+      </div>
+      <div is="incoming"></head>div>
+      <div class="list-container">
+        <div id="list">
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function() {
+        $('.container').css('visibility', 'visible')
+      });
+    </script>
+	</body>
+</html>

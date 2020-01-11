@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono&display=swap');
+
+* {
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  margin: 0 auto;
+  background-color: rgba(40, 40, 40, 0.3);
+}

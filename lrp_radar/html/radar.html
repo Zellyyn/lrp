@@ -1,0 +1,72 @@
+radar<html>
+	<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="radar.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./radar.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script>
+        var List = [];
+        function SetColor(colorid) {
+          $("#zone").html(colorid);
+          $.post('http://lrp_customs/SetPrimaryColor', JSON.stringify(colorid));
+        }
+
+        function ChangeMod(id, value) {
+          var c = {'id': id, 'value': value}
+          $.post('http://lrp_customs/ChangeMod', JSON.stringify(c));
+        }
+
+        function RepairActive() {
+          $("#repair").css("visibility", "visible");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "hidden");
+        }
+        
+        function ResprayActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "visible");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "hidden");
+        }
+        
+        function PerformanceActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "visible");
+          $("#bodyworks").css("visibility", "hidden");
+        }
+        
+        function BodyworksActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "visible");
+        }
+        
+        
+    </script>
+  </head>
+	<body>
+    <div class="hud">
+      <div class="label-front">FRONT</div>
+      <div class="label-back">BACK</div>
+      <div class="fwd-speed">888</div>
+      <div id="fwd-speed-data"></div>
+      <div id="fwd-plate"></div>
+      <div class="bwd-speed">888</div>
+      <div id="bwd-speed-data"></div>
+      <div id="bwd-plate"></div>
+      <div class="fwd-set-up"></div>
+      <div class="fwd-set-down"></div>
+      <div class="bwd-set-up"></div>
+      <div class="bwd-set-down"></div>
+      <div class="fwd-set">888</div>
+      <div id="fwd-set-data"></div>
+      <div class="bwd-set">888</div>
+      <div id="bwd-set-data"></div>
+      <div id="plate-top"></div>
+      <div id="plate-bottom"></div>
+    </div>
+</html>

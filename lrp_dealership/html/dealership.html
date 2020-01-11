@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="dealership.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./dealership.js" type="text/javascript"></script>
+    <script>
+        function ViewVehicle(data) {
+          $.post('http://lrp_dealership/ViewVehicle', JSON.stringify(data));
+        }
+
+        function GetVehiclesByClass(data) {
+          var c = {['class']: data.value};
+          $.post('http://lrp_dealership/VehiclesByClass', JSON.stringify(c));
+        }
+    </script>
+  </head>
+	<body>
+		<div class="container">
+      <div class="header">
+        <div id="location"></div>
+        <div id="zone"></div>
+      </div>
+      <div class="list-container">
+        <div id="list">
+        </div>
+      </div>
+      <div class="class-container">
+          <div id="classes"><div>
+      </div>
+    </div>
+	</body>
+</html>

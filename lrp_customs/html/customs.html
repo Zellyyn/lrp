@@ -1,0 +1,158 @@
+<html>
+	<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="customs.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./customs.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script>
+        var List = [];
+
+        function SetPrimaryColor(colorid) {
+          $("#zone").html(colorid);
+          $.post('http://lrp_customs/SetPrimaryColor', JSON.stringify(colorid));
+        }
+
+        function SetSecondaryColor(colorid) {
+          $("#zone").html(colorid);
+          $.post('http://lrp_customs/SetSecondaryColor', JSON.stringify(colorid));
+        }
+
+        function SetWheelColor(colorid) {
+          $("#zone").html(colorid);
+          $.post('http://lrp_customs/SetWheelColor', JSON.stringify(colorid));
+        }
+
+        function SetPearlescentColor(colorid) {
+          $("#zone").html(colorid);
+          $.post('http://lrp_customs/SetPearlescentColor', JSON.stringify(colorid));
+        }
+
+        function ChangeMod(id, value) {
+          var c = {'id': id, 'value': value}
+          $.post('http://lrp_customs/ChangeMod', JSON.stringify(c));
+        }
+
+        function ChangeWheel(tire, wheel) {
+          var c = {'tire': tire, 'wheel': wheel}
+          $.post('http://lrp_customs/ChangeWheel', JSON.stringify(c));
+        }
+
+        function RepairActive() {
+          $("#repair").css("visibility", "visible");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "hidden");
+          $("#wheels").css("visibility", "hidden");
+        }
+        
+        function ResprayActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "visible");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "hidden");
+          $("#wheels").css("visibility", "hidden");
+        }
+        
+        function PerformanceActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "visible");
+          $("#bodyworks").css("visibility", "hidden");
+          $("#wheels").css("visibility", "hidden");
+        }
+        
+        function BodyworksActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "visible");
+          $("#wheels").css("visibility", "hidden");
+        }
+        
+        function WheelsActive() {
+          $("#repair").css("visibility", "hidden");
+          $("#respray").css("visibility", "hidden");
+          $("#performance").css("visibility", "hidden");
+          $("#bodyworks").css("visibility", "hidden");
+          $("#wheels").css("visibility", "visible");
+        }
+        
+        
+    </script>
+  </head>
+	<body>
+    <div class="hud">
+      <div id="cash-balance"></div>
+    </div>
+		<div class="container">
+      <div class="header">
+        <div id="location"></div>
+        <div id="zone"></div>
+      </div>
+      <div class="list-container">
+        <div id="repair">
+        </div>
+        <div id="performance">
+        </div>
+        <div id="respray"> 
+          <div class='panel-group' id='repray-accordian'>
+            <div class='panel panel-default'>
+              <div class='pheading panel-heading'>
+                <div data-toggle='collapse' data-parent='#repray-accordian' href='#primary'>Primary Color</div>
+              </div>
+              <div id='primary' class='panel-collapse collapse'>Primary
+              </div>
+            </div>
+            <div class='panel panel-default'>
+              <div class='pheading panel-heading'>
+                <div data-toggle='collapse' data-parent='#repray-accordian' href='#secondary'>Secondary Color</div>
+              </div>
+              <div id='secondary' class='panel-collapse collapse'>Secondary
+              </div>
+            </div>
+            <div class='panel panel-default'>
+              <div class='pheading panel-heading'>
+                <div data-toggle='collapse' data-parent='#repray-accordian' href='#pearlescent'>Pearlescent Color</div>
+              </div>
+              <div id='pearlescent' class='panel-collapse collapse'>Pearlescent
+              </div>
+            </div>
+            <div class='panel panel-default'>
+              <div class='pheading panel-heading'>
+                <div data-toggle='collapse' data-parent='#repray-accordian' href='#wheelcolor'>Wheel Color</div>
+              </div>
+              <div id='wheelcolor' class='panel-collapse collapse'>Wheel
+              </div>
+            </div>
+            <div class='panel panel-default'>
+              <div class='pheading panel-heading'>
+                <div data-toggle='collapse' data-parent='#repray-accordian' href='#smoke'>Smoke Color</div>
+              </div>
+              <div id='smoke' class='panel-collapse collapse'>Smoke
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="wheels">
+        </div>
+        <div id="bodyworks">
+        </div>
+      </div>
+      <div class="account-container">
+        <div id="accounts">
+          <div class="tab"><div class="repair" onclick="RepairActive()"></div>
+          </div>
+          <div class="tab"><div class="respray" onclick="ResprayActive()"></div>
+          </div>
+          <div class="tab"><div class="performance" onclick="PerformanceActive()"></div>
+          </div>
+          <div class="tab"><div class="wheels" onclick="WheelsActive()"></div>
+          </div>
+          <div class="tab"><div class="bodyworks" onclick="BodyworksActive()"></div>
+          </div>
+        <div> 
+      </div> 
+    </div>
+  </body>
+</html>

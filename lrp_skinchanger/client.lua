@@ -1,0 +1,7 @@
+--On Connect
+  --Is in database?
+  -- Check Identifier in DB
+  -- Yes
+    -- Update DB with new timestamp
+  -- No
+    -- Create entry in DB

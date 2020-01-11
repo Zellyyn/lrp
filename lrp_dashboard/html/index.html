@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="reset.css" type="text/css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./listener.js" type="text/javascript"></script>
+    <script>
+      $("#container").hide();
+      $("#speed-shadow").hide();
+      $("#rpm-shadow").hide();
+      $("#speed").hide();
+      $("#rpm").hide();
+      $("#fuel").hide();
+      $("#fuel-shadow").hide();
+      $("#time").hide();
+      $("#time-shadow").hide();
+      $("#heading").hide();
+      $("#street").hide();
+      $("#cross").hide();
+      $("#zone").hide();
+      $("#cruise").hide();
+      $("#cruise-speed").hide();
+      $("#cruise-speed-shadow").hide();
+      $("#low-beam").hide();
+      $("#engine").hide();
+      $("#high-beam").hide();
+      $("#seatbelt").hide();
+    </script>
+	<body>
+		<div class="container">
+      <div class="left-db">
+        <div id="tester"></div>
+      </div>
+      <div class="center-db">
+        <div id="speed-shadow">888</div>
+        <div id="speed"></div>
+        <div id="rpm-shadow"></div>
+        <div id="rpm"></div>
+        <div id="fuel-shadow"></div>
+        <div id="fuel"></div> 
+        <div id="time"></div> 
+        <div id="cruise">CRUISE</div>
+        <div id="cruise-speed-shadow">188</div>
+        <div id="cruise-speed"></div>
+        <div id="low-beam"></div>
+        <div id="engine"></div>
+        <div id="high-beam"></div>
+        <div id="seatbelt"></div>
+      </div>
+      <div class="right-db">
+        <div id='heading'></div>
+        <div id='street'></div>
+        <div id='cross'></div>
+        <div id='zone'></div>
+      </div>
+    </div>
+    <script>
+      $(function() {
+        $('body').css('visibility', 'visible');
+      });
+    </script>
+	</body>
+</html>

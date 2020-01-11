@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="bank.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./bank.js" type="text/javascript"></script>
+    <script>
+        function AccountBalance(data) {
+          $.post('http://lrp_bank/GetAccountBalance', JSON.stringify(data));
+        }
+
+        function DepositCash(data) {
+          var amount = document.getElementById(data.account).value;;
+          var c = {'account': data.account, 'amount': amount};
+          $.post('http://lrp_bank/DepositCash', JSON.stringify(c));
+        }
+
+        function WithdrawalCash(data) {
+          var amount = document.getElementById(data.account).value;;
+          var c = {'account': data.account, 'amount': amount};
+          $.post('http://lrp_bank/WithdrawalCash', JSON.stringify(c));
+        }
+    </script>
+  </head>
+	<body>
+    <div class="hud">
+      <div id="cash-balance"></div>
+    </div>
+		<div class="container">
+      <div class="header">
+        <div id="location"></div>
+        <div id="zone"></div>
+      </div>
+      <div class="list-container">
+        <div id="list">
+        </div>
+      </div>
+      <div class="account-container">
+        <div id="accounts"><div> 
+      </div> 
+    </div>
+	</body>
+</html>
